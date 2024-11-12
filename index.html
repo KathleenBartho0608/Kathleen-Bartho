@@ -1,54 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Management Consultant und Coach Kathleen Bartho</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kathleen Bartho - Management Consultant</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body style="width: 100vw;height: 100vh;margin: 0;">
-    <div style="font-weight: 600;margin-top: 2em;margin-bottom: 2em;margin-left: 5em;">
-        Diese Seite ist gerade umgezogen und wird neu aufgebaut. 
-    </div>  
+<body>
+    <header>
+        <h1>Kathleen Bartho</h1>
+        <p>Management Consultant & Unternehmerin</p>
+    </header>
 
-    <div style="font-weight: 300;margin-top: 2em;margin-bottom: 2em;margin-left: 5em;">   
-        <div style="font-weight: 600;">
-        Kathleen Bartho<br>
-        Management Consulting und Coaching<br>
+    <section class="profile">
+        <div class="profile-image">
+            <img src="Kathleen.jpg" alt="Kathleen Bartho">
         </div>
-        <div>
+        <div class="profile-details">
+            <h2>Über mich</h2>
+            <p>Kathleen Bartho ist eine Managementberaterin und Unternehmerin aus Leidenschaft. Mit über 20 Jahren Erfahrung in Projektmanagement, Prozessoptimierung und digitaler Transformation liebt sie es, Entscheidungen zu treffen und moderne Technologien kritisch zu hinterfragen und einzusetzen.</p>
+            <p>Als Gründerin und CEO des Startups 99active arbeitet sie täglich daran, ihre Vision einer Plattform für gemeinschaftliche Erlebnisse Wirklichkeit werden zu lassen. Ihre Branchenkenntnisse reichen von Energieversorgung und Finanzwesen bis zur Sportindustrie.</p>
+        </div>
+    </section>
+
+    <section class="expertise">
+        <h2>Kompetenzen und Schwerpunkte</h2>
+        <ul>
+            <li>Projekt- und Programmmanagement (PMO)</li>
+            <li>Prozessoptimierung und Automatisierung</li>
+            <li>Organisationsentwicklung und Change Management</li>
+            <li>Digitale Transformation und IT-Beratung</li>
+            <li>Governance, Risk und Compliance (GRC)</li>
+            <li>Controlling und Financial Management</li>
+        </ul>
+    </section>
+
+    <section class="experience">
+        <h2>Berufliche Laufbahn</h2>
+        <div class="job">
+            <h3>Seit 2019 – CEO & Founder, 99active Ltd. & Co. KG</h3>
+            <p>Kathleen Bartho gründete 99active mit dem Ziel, eine Plattform zu schaffen, die Menschen durch gemeinschaftliche Erlebnisse und Aktivitäten zusammenbringt...</p>
+        </div>
+        <!-- Weitere Job-Beschreibungen -->
+    </section>
+
+    <section class="imprint">
+        <h2>Impressum</h2>
+        <p>Kathleen Bartho<br>
+        Management Consulting und Coaching<br>
         Werkstraße 2<br>
         76477 Elchesheim-Illingen<br>
         Email: Kathleen@Kathleen-Bartho.de<br>
         Phone: +49 07245 9471861<br>
-        Mobile: +49 176 42 57 34 93<br>
-        <p></p>
-        VAT ID DE280103988
-        <p></p>
-        Dipl. Kauffrau für Europäische Wirtschaft (FH)<br>
-        Liebscher & Bracht Trainer<br>
-        Kunst- und Kreativitätstherapeut<br>
-        <p></p>
-        Selbständig seid: 2011
-        <p></p>
-        Schwerpunkte:
-        <p></p>
-        Programm- und Projektemanagment, PMO<br>
-        IT Portfolio Management<br>
-        Product Owner<br>
-        Prozessoptimierung/Automatisierung<br>
-        Organisationsentwicklung - Change Management<br>
-        Kommunikation Management<br>
-        Teambuilding<br>
-        Digitale Transformation<br>
-        Governance Risk und Compliance<br>
-        Controlling - Reporting - KPI - Dashboards<br>
-        Financial Management<br>
-        <p></p>
-        Branchen:
-        <p></p>
-        IT - Information Technology<br>
-        Bank<br>
-        Sportindustrie<br>
-        Shared Service Center<br>
-        Energieversorgung<br>
-        </div>    
-    </div>
-</body>
+        Mobile: +49 176 42 57 34 93</p>
+    </section>
 
+</body>
+</html>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background-color: #ffffff;
+}
+
+.profile-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+
+.profile-details h2 {
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.expertise,
+.experience,
+.imprint {
+    padding: 20px;
+    background-color: #ffffff;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.expertise h2,
+.experience h2,
+.imprint h2 {
+    color: #003366;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+ul li:before {
+    content: "•";
+    color: #003366;
+    position: absolute;
+    left: 0;
+}
+
+.job {
+    margin-bottom: 20px;
+}
+
+.imprint {
+    font-size: 0.9em;
+    color: #666;
+}
+</style>
