@@ -1,194 +1,720 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kathleen Bartho - Management Consultant</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Kathleen Bartho - Senior Management Consultant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #1a1a1a;
+            --color-secondary: #4a4a4a;
+            --color-accent: #2c5f7d;
+            --color-text: #333333;
+            --color-text-light: #666666;
+            --color-bg: #ffffff;
+            --color-bg-light: #f8f9fa;
+            --color-border: #e0e0e0;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 6rem;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.7;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: var(--spacing-xl) var(--spacing-md) var(--spacing-lg);
+            text-align: center;
+            background: linear-gradient(to bottom, var(--color-bg-light), var(--color-bg));
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-md);
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .hero .subheadline {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            color: var(--color-text-light);
+            max-width: 900px;
+            margin: 0 auto var(--spacing-md);
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .hero .tagline {
+            font-size: 0.95rem;
+            color: var(--color-secondary);
+            margin-bottom: var(--spacing-md);
+            font-weight: 400;
+        }
+
+        .hero .tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            margin: var(--spacing-md) auto var(--spacing-lg);
+            max-width: 800px;
+        }
+
+        .hero .tag {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            background-color: var(--color-bg-light);
+            border: 1px solid var(--color-border);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--color-text);
+            font-weight: 400;
+        }
+
+        .hero .cta-buttons {
+            display: flex;
+            gap: var(--spacing-sm);
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: var(--spacing-md);
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            background-color: var(--color-primary);
+            color: var(--color-bg);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-secondary);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            background-color: transparent;
+            color: var(--color-text);
+            text-decoration: none;
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--color-text);
+            color: var(--color-primary);
+        }
+
+        /* Section Styles */
+        section {
+            padding: var(--spacing-lg) var(--spacing-md);
+        }
+
+        section h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-md);
+            letter-spacing: -0.01em;
+        }
+
+        section h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--color-bg);
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--color-text);
+        }
+
+        .about-content p {
+            margin-bottom: var(--spacing-md);
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--color-bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .service-card {
+            background-color: var(--color-bg);
+            padding: var(--spacing-md);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            transition: box-shadow 0.2s ease, transform 0.1s ease;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .service-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-primary);
+        }
+
+        .service-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-card li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.75rem;
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+
+        .service-card li:before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+        }
+
+        /* Experience Section */
+        .experience {
+            background-color: var(--color-bg);
+        }
+
+        .experience-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .experience-item {
+            display: flex;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md) 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .experience-date {
+            min-width: 140px;
+            font-weight: 500;
+            color: var(--color-secondary);
+            font-size: 0.95rem;
+        }
+
+        .experience-content h4 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-content p {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Tools Section */
+        .tools {
+            background-color: var(--color-bg-light);
+            padding: var(--spacing-md) var(--spacing-md);
+        }
+
+        .tools-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .tools-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+
+        .tool-tag {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--color-text);
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--color-bg);
+            padding: var(--spacing-lg) var(--spacing-md);
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-intro {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.7;
+        }
+
+        .contact-form {
+            text-align: left;
+            margin-top: var(--spacing-md);
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--color-text);
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem;
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Imprint Section */
+        .imprint {
+            background-color: var(--color-bg);
+            padding: var(--spacing-lg) var(--spacing-md);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .imprint-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .imprint h2 {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .imprint-info {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--color-text-light);
+        }
+
+        .imprint-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .imprint-info a {
+            color: var(--color-text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--color-border);
+            transition: border-color 0.2s ease;
+        }
+
+        .imprint-info a:hover {
+            border-bottom-color: var(--color-primary);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: var(--spacing-sm);
+            justify-content: center;
+            align-items: center;
+            margin-top: var(--spacing-sm);
+        }
+
+        .social-links a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .social-links a:hover {
+            border-color: var(--color-primary);
+            background-color: var(--color-bg-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-bg-light);
+            padding: var(--spacing-md);
+            text-align: center;
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footer-links {
+            margin-top: var(--spacing-xs);
+            display: flex;
+            gap: var(--spacing-sm);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--color-text-light);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            border-bottom-color: var(--color-text-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: var(--spacing-md) var(--spacing-sm) var(--spacing-md);
+            }
+
+            section {
+                padding: var(--spacing-md) var(--spacing-sm);
+            }
+
+            .experience-item {
+                flex-direction: column;
+                gap: var(--spacing-xs);
+            }
+
+            .experience-date {
+                min-width: auto;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Kathleen Bartho</h1>
-        <p>Management Consultant & Unternehmerin</p>
-    </header>
-
-    <section class="profile">
-        <div class="profile-image">
-            <img src="Kathleen.jpg" alt="Kathleen Bartho">
-        </div>
-        <div class="profile-details" style="font-size: 0.9em;">
-            <h4>Über mich</h4>
-            <p>Ich bin eine leidenschaftliche Managementberaterin und Unternehmerin mit über 20 Jahren Erfahrung in Projektmanagement, Prozessoptimierung und digitaler Transformation.</p>
-            <p>Als Gründerin und CEO von 99active arbeite ich daran, meine Vision einer Plattform für gemeinschaftliche Erlebnisse Wirklichkeit werden zu lassen. Um diese Vision mit der Freiheit und Agilität eines Startups weiterzuverfolgen, bleibe ich bewusst finanziell unabhängig und ergänze meine Arbeit bei 99active durch meine Tätigkeit als Managementberaterin.</p>
-            <p>Mit breiter Branchenkenntnis – von Energieversorgung und Finanzwesen bis hin zur Sportindustrie – begleite ich Unternehmen dabei, nachhaltige Strukturen und innovative Prozesse zu etablieren.</p>
-            <p>Meine Schwerpunkte liegen dabei in Governance, Risk & Compliance, Controlling und Reporting, mit denen ich Unternehmen sicher durch komplexe Transformationsprozesse führe.</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <p class="tagline">Senior Management Consultant · Organizational Development · Digital Transformation · Financial PMO</p>
+            <h1>Calm, Clear Leadership for Complex Transformations.</h1>
+            <p class="subheadline">
+                I help organizations bring structure, clarity, and financial control into complex digital programs – with more than 20 years of experience in organizational development, digital transformation, and financial PMO.
+            </p>
+            <div class="tags">
+                <span class="tag">Organizational Development</span>
+                <span class="tag">Digital Transformation</span>
+                <span class="tag">Financial PMO & IT Controlling</span>
+                <span class="tag">PMO & IT Project Leadership</span>
+            </div>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn-primary">Get in Touch</a>
+                <a href="#" class="btn-secondary">View Profile (PDF)</a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/kathleen-bartho-7923b4167/" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle;">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    LinkedIn
+                </a>
+            </div>
         </div>
     </section>
 
-    <section class="expertise">
-        <h4>Kompetenzen und Schwerpunkte</h4>
-        <ul>
-            <li>Projekt- und Programmmanagement (PMO)</li>
-            <li>Prozessoptimierung und Automatisierung</li>
-            <li>Organisationsentwicklung und Change Management</li>
-            <li>Digitale Transformation</li>
-            <li>Governance, Risk und Compliance (GRC)</li>
-            <li>Controlling und Financial Management</li>
-        </ul>
+    <!-- About Me Section -->
+    <section class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>
+                    I work calmly, focused, and without unnecessary noise. I learned this early during my studies and parental leave, when I carried two major responsibilities at once. Since then, I know how to stay clear-headed, switch topics without losing focus, and remain composed even in demanding situations.
+                </p>
+                <p>
+                    My professional foundation is the Diplom-Kauffrau für Europäische Wirtschaft (FH) – a German business degree comparable to an MBA – combined with more than 20 years of experience as a professional project lead, PMO lead, and IT project lead. This background shapes how I structure organizations, design processes, and guide transformation programs with clarity and authority.
+                </p>
+                <p>
+                    My additional training as an art & creative therapist and movement coach strengthens my ability to lead teams through complexity with grounded focus, human understanding, and the ability to create clarity in dynamic situations. Whether I work with teams, leadership, or complex transformation programs, I bring this rare combination of deep focus, agility, and steady leadership into every project.
+                </p>
+                <p>
+                    I combine large-corporate experience with the clarity and pragmatism of a startup. I work solution-oriented, process-driven, and always with a focus on what truly works for people in their everyday roles.
+                </p>
+            </div>
+        </div>
     </section>
 
+    <!-- Core Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2>Core Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Organizational Development & Process Architecture</h3>
+                    <ul>
+                        <li>End-to-end process mapping and design in energy, banking, and shared services</li>
+                        <li>Governance, role, and steering models</li>
+                        <li>Target process architectures and operating models</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Financial PMO & IT Controlling</h3>
+                    <ul>
+                        <li>CAPEX/OPEX planning, steering, and variance analysis</li>
+                        <li>IT project financial controlling and project accounting</li>
+                        <li>Budget forecasts, accruals, cost baselines, and reconciliations</li>
+                        <li>Month-end and year-end closing support for IT projects</li>
+                        <li>KPI dashboards and financial reporting (Power BI, Excel)</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Digital Transformation & Governance</h3>
+                    <ul>
+                        <li>Clear, feasible digital target pictures</li>
+                        <li>Workflow simplification and automation concepts</li>
+                        <li>Platform and cloud adoption</li>
+                        <li>Governance, risk & compliance (GRC) structures and ICS</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>PMO & IT Project Leadership</h3>
+                    <ul>
+                        <li>PMO structures, risk steering, and decision models</li>
+                        <li>Professional leadership of IT and business projects</li>
+                        <li>Multi-stakeholder coordination</li>
+                        <li>Agile and hybrid ways of working</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Highlights Section -->
     <section class="experience">
-    
-        <div class="job">
-            <h5>Startup & Plattform-Entwicklung</h5>
-            <p style="font-size: 0.9em;">Als Gründerin und CEO von 99active schuf ich eine Plattform, die Menschen durch gemeinsame Erlebnisse verbindet, und etablierte ein skalierbares Geschäftsmodell, das nachhaltiges Wachstum und eine lebendige Community fördert.</p>
+        <div class="container">
+            <h2>Experience Highlights</h2>
+            <div class="experience-list">
+                <div class="experience-item">
+                    <div class="experience-date">Since 2019</div>
+                    <div class="experience-content">
+                        <h4>CEO & Founder, 99active Ltd. & Co. KG</h4>
+                        <p>Community tech platform · Organizational architecture · Vision & execution</p>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-date">07/2023 – today</div>
+                    <div class="experience-content">
+                        <h4>Senior Management Consultant, Stadtwerke Flensburg</h4>
+                        <p>Process architecture, SAP EEG Billing, governance & process coaching</p>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-date">04/2019 – 07/2022</div>
+                    <div class="experience-content">
+                        <h4>Senior Consultant GRC & Organizational Integration, DVB Bank SE</h4>
+                        <p>Governance frameworks, KPI/KRI monitoring, post-merger integration</p>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-date">09/2016 – 12/2018</div>
+                    <div class="experience-content">
+                        <h4>Senior Project Lead Transformation, Adidas Global IT</h4>
+                        <p>International transformation program, Finance 2.0 (SAP S/4HANA, Fiori, Signavio, UiPath)</p>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-date">2011 – 2016</div>
+                    <div class="experience-content">
+                        <h4>Senior roles in PM, Controlling & Compliance</h4>
+                        <p>E.ON, EnBW, DFB IT subsidiary</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    
-        <div class="job">
-            <h5>Energieversorgung</h5>
-            <p style="font-size: 0.9em;">Durch Coaching und Prozessberatung unterstützte ich die kaufmännische Leitung dabei, ein datengestütztes Projektmanagement und Reporting einzuführen, das Entscheidungsprozesse nachhaltig optimierte.</p>
-        </div>
-    
-        <div class="job">
-            <h5>Bank- und Finanzwesen</h5>
-            <p style="font-size: 0.9em;">Ich baute Governance- und Compliance-Strukturen auf, die zu höherer Transparenz und Risikokontrolle führten, und unterstützte erfolgreiche Integrationsprozesse im Rahmen von Fusionen.</p>
-        </div>
-    
-        <div class="job">
-            <h5>Sportindustrie & Global IT</h5>
-            <p style="font-size: 0.9em;">Im globalen Umfeld eines führenden Sportunternehmens leitete ich transformative Projekte zur Automatisierung und entwickelte Change-Strategien, die Effizienz und interkulturelle Zusammenarbeit förderten.</p>
-        </div>
-    
-        <div class="job">
-            <h5>Shared Services & öffentlicher Sektor</h5>
-            <p style="font-size: 0.9em;">Durch die Implementierung neuer Controlling- und Reporting-Methoden schuf ich im Shared Service Center eines großen Verbands effiziente Prozesse, die als Best Practice etabliert wurden.</p>
-        </div>
-    </section>    
-
-    <section class="imprint">
-        <h4>Impressum</h4>
-        <p>Kathleen Bartho<br>
-        Management Consulting und Coaching<br>
-        Werkstraße 2<br>
-        76477 Elchesheim-Illingen<br>
-        <i class="fas fa-envelope" style="color: #003366;"></i> <a href="mailto:Kathleen@Kathleen-Bartho.de">Kathleen@Kathleen-Bartho.de</a><br>
-        <i class="fas fa-phone" style="color: #003366;"></i> <a href="tel:+4972459471861">+49 07245 9471861</a><br>
-        <i class="fas fa-mobile-alt" style="color: #003366;"></i> <a href="tel:+4917642573493">+49 176 42 57 34 93</a></p>
     </section>
 
+    <!-- Tools & Methods Section -->
+    <section class="tools">
+        <div class="container">
+            <div class="tools-content">
+                <h2>Tools & Methods</h2>
+                <div class="tools-grid">
+                    <span class="tool-tag">SAP Signavio</span>
+                    <span class="tool-tag">BPMN 2.0</span>
+                    <span class="tool-tag">SAP S/4HANA</span>
+                    <span class="tool-tag">SAP BI/BW</span>
+                    <span class="tool-tag">Power BI</span>
+                    <span class="tool-tag">Excel (advanced)</span>
+                    <span class="tool-tag">Confluence</span>
+                    <span class="tool-tag">Jira</span>
+                    <span class="tool-tag">Trello</span>
+                    <span class="tool-tag">Smartsheet</span>
+                    <span class="tool-tag">Slack</span>
+                    <span class="tool-tag">Microsoft 365</span>
+                    <span class="tool-tag">macOS</span>
+                    <span class="tool-tag">Google Workspace</span>
+                    <span class="tool-tag">GitHub</span>
+                    <span class="tool-tag">VS Code</span>
+                    <span class="tool-tag">OpenAI Platform & Vector Store API</span>
+                    <span class="tool-tag">Cursor AI</span>
+                    <span class="tool-tag">Gemini CLI</span>
+                    <span class="tool-tag">Product discovery</span>
+                    <span class="tool-tag">MVP cycles</span>
+                    <span class="tool-tag">Platform & marketplace design</span>
+                    <span class="tool-tag">Customer journeys</span>
+                    <span class="tool-tag">Agile / hybrid delivery</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Let's Talk.</h2>
+                <p class="contact-intro">
+                    If you are looking for calm, experienced support for your digital programs, financial PMO, or organizational development, I'm happy to discuss how I can help.
+                </p>
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Imprint Section -->
+    <section class="imprint">
+        <div class="container">
+            <div class="imprint-content">
+                <h2>Impressum</h2>
+                <div class="imprint-info">
+                    <p><strong>Kathleen Bartho</strong><br>
+                    Management Consulting und Coaching<br>
+                    Werkstraße 2<br>
+                    76477 Elchesheim-Illingen</p>
+                    <p>
+                        <a href="mailto:Kathleen@Kathleen-Bartho.de">Kathleen@Kathleen-Bartho.de</a><br>
+                        <a href="tel:+4972459471861">+49 07245 9471861</a><br>
+                        <a href="tel:+4917642573493">+49 176 42 57 34 93</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Kathleen Bartho. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/kathleen-bartho-7923b4167/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    color: #333;
-    background-color: #e6f7ff; /* Changed background color to a very light blue */
-}
-
-header {
-    background-color: #003366;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-header h1 {
-    font-size: 2em; /* Reduced font size */
-    margin-bottom: 20px; /* Added margin */
-}
-
-header p {
-    font-size: 1em; /* Reduced font size */
-    margin-bottom: 20px; /* Added margin */
-}
-
-.profile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-    background-color: #ffffff;
-    margin-bottom: 40px; /* Added margin */
-}
-
-.profile-image img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-right: 30px;
-}
-
-.profile-details h4 {
-    color: #003366;
-    margin-bottom: 20px; /* Increased margin */
-    font-size: 1em; /* Reduced font size */
-}
-
-.expertise,
-.experience,
-.imprint {
-    padding: 20px;
-    background-color: #ffffff;
-    margin: 40px 20px; /* Increased margin */
-    border-radius: 8px;
-}
-
-.expertise h4,
-.experience h4,
-.imprint h4 {
-    color: #003366;
-    font-size: 1em; /* Reduced font size */
-    margin-bottom: 20px; /* Increased margin */
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-    font-size: 0.9em; /* Reduced font size */
-}
-
-ul li:before {
-    content: "•";
-    color: #003366;
-    position: absolute;
-    left: 0;
-}
-
-.job {
-    margin-bottom: 40px; /* Increased margin */
-}
-
-.job h5 {
-    color: #003366;
-    font-size: 1em; /* Reduced font size */
-    margin-bottom: 20px; /* Added margin */
-}
-
-.imprint {
-    font-size: 0.8em; /* Reduced font size */
-    color: #666;
-}
-
-.imprint a {
-    color: #666;
-    text-decoration: none;
-}
-
-.imprint a:hover {
-    text-decoration: underline;
-}
-</style>
