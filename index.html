@@ -224,7 +224,7 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: var(--spacing-md);
             margin-top: var(--spacing-md);
         }
@@ -456,6 +456,12 @@
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .hero {
                 padding: var(--spacing-md) var(--spacing-sm) var(--spacing-md);
@@ -576,39 +582,34 @@
             <h2>Core Services</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>Organizational Development & Process Architecture</h3>
-                    <ul>
-                        <li>End-to-end process mapping and design in energy, banking, and shared services</li>
-                        <li>Governance, role, and steering models</li>
-                        <li>Target process architectures and operating models</li>
-                    </ul>
-                </div>
-                <div class="service-card">
                     <h3>Financial PMO & IT Controlling</h3>
                     <ul>
-                        <li>CAPEX/OPEX planning, steering, and variance analysis</li>
-                        <li>IT project financial controlling and project accounting</li>
-                        <li>Budget forecasts, accruals, cost baselines, and reconciliations</li>
-                        <li>Month-end and year-end closing support for IT projects</li>
-                        <li>KPI dashboards and financial reporting (Power BI, Excel)</li>
+                        <li>CAPEX/OPEX steering, forecasting & variance analysis</li>
+                        <li>IT project financial controlling & project accounting</li>
+                        <li>Month-end & year-end closing support for IT programs</li>
+                        <li>KPI dashboards, portfolio reporting (Power BI, Excel)</li>
+                        <li>Governance, audit & internal control compliance</li>
+                        <li>Steering committee preparation & financial risk insights</li>
                     </ul>
                 </div>
                 <div class="service-card">
-                    <h3>Digital Transformation & Governance</h3>
+                    <h3>Organizational Development & Process Architecture</h3>
                     <ul>
-                        <li>Clear, feasible digital target pictures</li>
-                        <li>Workflow simplification and automation concepts</li>
-                        <li>Platform and cloud adoption</li>
-                        <li>Governance, risk & compliance (GRC) structures and ICS</li>
+                        <li>End-to-end process mapping & redesign (energy, banking, IT)</li>
+                        <li>Governance, roles & operating models</li>
+                        <li>Target process architectures & organizational handbooks</li>
+                        <li>Scalable and sustainable structures that work in practice</li>
+                        <li>Process simplification & cross-team alignment</li>
                     </ul>
                 </div>
                 <div class="service-card">
                     <h3>PMO & IT Project Leadership</h3>
                     <ul>
-                        <li>PMO structures, risk steering, and decision models</li>
-                        <li>Professional leadership of IT and business projects</li>
+                        <li>PMO structures, risk steering & decision models</li>
+                        <li>Leadership of IT and business projects</li>
                         <li>Multi-stakeholder coordination</li>
-                        <li>Agile and hybrid ways of working</li>
+                        <li>Agile & hybrid ways of working</li>
+                        <li>Clear reporting, documentation & communication</li>
                     </ul>
                 </div>
             </div>
@@ -645,7 +646,7 @@
                     <div class="experience-date">09/2016 – 12/2018</div>
                     <div class="experience-content">
                         <h4>Senior Project Lead Transformation, Adidas Global IT</h4>
-                        <p>International transformation program, Finance 2.0 (SAP S/4HANA, Fiori, Signavio, UiPath)</p>
+                        <p>International transformation program</p>
                     </div>
                 </div>
                 <div class="experience-item">
