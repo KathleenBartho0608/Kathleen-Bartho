@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kathleen Bartho - Senior Management Consultant</title>
+    <title>Kathleen Bartho — Management Consulting & Coaching</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -224,7 +224,7 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: var(--spacing-md);
             margin-top: var(--spacing-md);
         }
@@ -321,22 +321,47 @@
             margin: 0 auto;
         }
 
-        .tools-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--spacing-sm);
+        .tools-intro {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--color-text-dark);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .tools-footnote {
+            margin-top: var(--spacing-md);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--color-text-light);
+        }
+
+        .tools-answers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: var(--spacing-md);
             margin-top: var(--spacing-md);
         }
 
-        .tool-tag {
-            display: inline-block;
-            padding: 0.5rem 1rem;
+        .tools-answer {
             background-color: var(--color-white);
             border: 2px solid var(--color-deep-blue);
             border-radius: 4px;
-            font-size: 0.9rem;
-            color: var(--color-black);
-            font-weight: 500;
+            padding: var(--spacing-md);
+        }
+
+        .tools-answer h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-deep-blue);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .tools-answer p {
+            font-size: 0.95rem;
+            line-height: 1.65;
+            color: var(--color-text-dark);
+            margin: 0;
         }
 
         /* Contact Section */
@@ -456,12 +481,6 @@
         }
 
         /* Responsive */
-        @media (max-width: 1024px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
         @media (max-width: 768px) {
             .hero {
                 padding: var(--spacing-md) var(--spacing-sm) var(--spacing-md);
@@ -500,10 +519,6 @@
                 min-width: auto;
             }
 
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
             .cta-buttons {
                 flex-direction: column;
             }
@@ -530,16 +545,16 @@
                     <img src="Kathleen.jpg" alt="Kathleen Bartho">
                 </div>
                 <div class="hero-content">
-                    <p class="tagline">Senior Management Consultant · Organizational Development · Digital & Regulatory Transformation · Financial PMO</p>
-                    <h1>Calm, Clear Leadership for Complex Transformations.</h1>
+                    <p class="tagline">Management consulting & coaching · Organizational development · Digital & regulatory change · Financial PMO</p>
+                    <h1>Structure for the work. Clarity for the people.</h1>
                     <p class="subheadline">
-                        I help organizations bring structure, clarity, and financial control into complex digital and regulatory programs – with 15 years of experience in organizational development, digital transformation, and financial PMO.
+                        I support leaders and teams through complex digital and regulatory programs: sound governance, financial control, and delivery discipline—combined with coaching that strengthens how people collaborate, decide, and follow through when pressure is high.
                     </p>
                     <div class="tags">
-                        <span class="tag">Organizational Development</span>
-                        <span class="tag">Digital Transformation</span>
-                        <span class="tag">Financial PMO & IT Controlling</span>
-                        <span class="tag">PMO & IT Project Leadership</span>
+                        <span class="tag">Consulting & coaching</span>
+                        <span class="tag">Collaboration & leadership</span>
+                        <span class="tag">Financial PMO & IT controlling</span>
+                        <span class="tag">PMO & program leadership</span>
                     </div>
                     <div class="cta-buttons">
                         <a href="https://www.linkedin.com/in/kathleen-bartho-7923b4167/" target="_blank" rel="noopener noreferrer" class="btn-primary">
@@ -564,17 +579,17 @@
     <!-- About Me Section -->
     <section class="about">
         <div class="container">
-            <h2>About Me</h2>
+            <h2>About</h2>
             <div class="about-content">
                 <p>
-                    I work calmly, focused, and without unnecessary noise. My professional foundation is the Diplom-Kauffrau für Europäische Wirtschaft (FH) – a German business degree comparable to an MBA – combined with 15 years of experience as a professional project lead, PMO lead, and IT project lead. This background shapes how I structure organizations, design processes, and guide transformation programs with clarity and authority.
-                    </p>
-                    <p>
-                    Governance and operating models for digital and AI-driven organizations (incl. EU AI Act readiness, risk and control frameworks, and steering models).
-                    </p>   
-                    <p>
-                    My additional training as an art & creative therapist and movement coach strengthens my ability to lead teams through complexity with grounded focus, human understanding, and the ability to create clarity in dynamic situations. I combine large-corporate experience with the clarity and pragmatism of a startup, working solution-oriented, process-driven, and always with a focus on what truly works for people in their everyday roles.
-                    </p>                    
+                    I work in a dual role: as a management consultant I bring structure to portfolios, finances, and operating models; as a coach I help teams build the habits of collaboration that make those models stick. The strongest framework fails when roles are unclear, trust is low, or decisions stall—so I treat process design and how people work together as one conversation, not two.
+                </p>
+                <p>
+                    My foundation is the Diplom-Kauffrau für Europäische Wirtschaft (FH)—a German business degree comparable to an MBA—together with fifteen years as project lead, PMO lead, and IT project lead in large programs. I design governance and steering for digital and AI-related change (including EU AI Act readiness, risk and control frameworks, and executive-ready reporting).
+                </p>
+                <p>
+                    Training as an art & creative therapist and movement coach informs how I facilitate difficult topics, reduce friction in groups, and keep leadership grounded under complexity. I combine corporate-scale experience with pragmatic, startup-style execution—always anchored in what teams can sustain in day-to-day work.
+                </p>
             </div>
         </div>
     </section>
@@ -582,38 +597,48 @@
     <!-- Core Services Section -->
     <section class="services">
         <div class="container">
-            <h2>Core Services</h2>
+            <h2>How I can help</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>Financial PMO & IT Controlling</h3>
+                    <h3>Financial PMO & IT controlling</h3>
                     <ul>
-                        <li>CAPEX/OPEX steering, forecasting & variance analysis</li>
-                        <li>IT project financial controlling & project accounting</li>
-                        <li>Month-end & year-end closing support for IT programs</li>
-                        <li>KPI dashboards, portfolio reporting (Power BI, Excel)</li>
-                        <li>Governance, audit & internal control frameworks</li>
-                        <li>Steering committee preparation & financial risk insights</li>
+                        <li>CAPEX/OPEX steering, forecasting, and variance analysis</li>
+                        <li>IT project financial controlling and project accounting</li>
+                        <li>Month-end and year-end support for IT programs</li>
+                        <li>KPI dashboards and portfolio reporting</li>
+                        <li>Governance, audit, and internal control frameworks</li>
+                        <li>Steering committee preparation and financial risk narratives</li>
                     </ul>
                 </div>
                 <div class="service-card">
-                    <h3>Organizational Development & Process Architecture</h3>
+                    <h3>Organization, process & governance</h3>
                     <ul>
-                        <li>End-to-end process mapping & redesign (energy, banking, IT)</li>
-                        <li>Governance, operating & steering models</li>
-                        <li>Regulatory and AI-ready organizational structures</li>
-                        <li>Target process architectures & organizational handbooks</li>
-                        <li>Scalable and sustainable structures that work in practice</li>
-                        <li>Process simplification & cross-team alignment</li>
+                        <li>End-to-end process mapping and redesign (energy, banking, IT)</li>
+                        <li>Operating and steering models that match real decision rights</li>
+                        <li>Regulatory and AI-ready structures (incl. risk and control design)</li>
+                        <li>Target architectures, handbooks, and practical playbooks</li>
+                        <li>Scalable setups that teams can run without constant firefighting</li>
+                        <li>Cross-functional alignment and process simplification</li>
                     </ul>
                 </div>
                 <div class="service-card">
-                    <h3>PMO & IT Project Leadership</h3>
+                    <h3>PMO & program leadership</h3>
                     <ul>
-                        <li>PMO structures, risk steering & decision models</li>
-                        <li>Leadership of IT and business projects</li>
-                        <li>Multi-stakeholder coordination</li>
-                        <li>Agile & hybrid ways of working</li>
-                        <li>Clear reporting, documentation & communication</li>
+                        <li>PMO design, risk steering, and decision forums</li>
+                        <li>Leadership of IT and business-led initiatives</li>
+                        <li>Multi-stakeholder coordination and escalation paths</li>
+                        <li>Agile, hybrid, and classic delivery where each fits</li>
+                        <li>Reporting, documentation, and executive communication</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Coaching & collaboration</h3>
+                    <ul>
+                        <li>Team and leadership coaching alongside program delivery</li>
+                        <li>Facilitation for alignment workshops and steering sessions</li>
+                        <li>Clarifying roles, interfaces, and “how we work together”</li>
+                        <li>Navigating conflict, overload, and ambiguity with composure</li>
+                        <li>Building psychological safety without losing accountability</li>
                     </ul>
                 </div>
             </div>
@@ -664,25 +689,39 @@
         </div>
     </section>
 
-    <!-- Tools & Methods Section -->
+    <!-- How we work (buyer-focused) -->
     <section class="tools">
         <div class="container">
             <div class="tools-content">
-                <h2>Selected Tools & Methods</h2>
-                <div class="tools-grid">
-                    <span class="tool-tag">SAP Signavio</span>
-                    <span class="tool-tag">BPMN 2.0</span>
-                    <span class="tool-tag">SAP S/4HANA</span>
-                    <span class="tool-tag">SAP BI/BW</span>
-                    <span class="tool-tag">Power BI</span>
-                    <span class="tool-tag">Excel (advanced)</span>
-                    <span class="tool-tag">Confluence/Jira</span>
-                    <span class="tool-tag">GitHub</span>
-                    <span class="tool-tag">VS Code</span>
-                    <span class="tool-tag">Cursor AI</span>
-                    <span class="tool-tag">Gemini CLI</span>
+                <h2>What clients usually ask first</h2>
+                <p class="tools-intro">Below is the practical stuff procurement and sponsors care about—how the work runs, what you get, and how it lands with teams. Product names matter less than fit with how you already govern and report.</p>
+                <div class="tools-answers">
+                    <div class="tools-answer">
+                        <h3>How engagements are shaped</h3>
+                        <p>Clear scope, cadence, and sponsor touchpoints from the start—whether the need is financial PMO, process and governance design, program leadership, coaching, or a deliberate mix.</p>
+                    </div>
+                    <div class="tools-answer">
+                        <h3>Steering and transparency</h3>
+                        <p>Rolling views on cost, risk, and delivery that match your committees: what changed, why it matters, and what decision you need—without drowning leadership in detail.</p>
+                    </div>
+                    <div class="tools-answer">
+                        <h3>Artifacts you can reuse</h3>
+                        <p>Decision logs, interface maps, process and target operating models, control and audit narratives, and reporting packs your organization can own after the assignment.</p>
+                    </div>
+                    <div class="tools-answer">
+                        <h3>Your systems, not mine</h3>
+                        <p>I work inside your landscape—commonly SAP-centric process and data environments plus the collaboration and reporting tools you already use—so knowledge stays with you.</p>
+                    </div>
+                    <div class="tools-answer">
+                        <h3>Delivery style</h3>
+                        <p>Rhythm and rigor are matched to regulation, dependency risk, and team maturity—not a one-size label. The goal is predictability and clean handovers, not methodology theatre.</p>
+                    </div>
+                    <div class="tools-answer">
+                        <h3>Where coaching shows up</h3>
+                        <p>When stakes are high, I help leaders and teams align on how they decide, escalate, and speak honestly under pressure—so structure in slides becomes behavior in the room.</p>
+                    </div>
                 </div>
-                <p>Tools are used as enablers for governance, transparency, and decision-making — not as an end in themselves.</p>
+                <p class="tools-footnote">Frameworks and software are only useful when people share the same story about purpose, roles, and trade-offs. That is the thread between consulting and coaching.</p>
             </div>
         </div>
     </section>
@@ -691,9 +730,9 @@
     <section class="contact" id="contact">
         <div class="container">
             <div class="contact-content">
-                <h2>Let's Talk.</h2>
+                <h2>Let’s talk</h2>
                 <p class="contact-intro">
-                    If you are looking for calm, experienced support for your digital programs, financial PMO, or organizational development, I'm happy to discuss how I can help.
+                    If you want stronger delivery discipline <em>and</em> healthier collaboration in the same engagement, I would be glad to explore fit—whether the priority is financial PMO, governance, program leadership, or team coaching.
                 </p>
                 <div class="contact-email">
                     <a href="mailto:Kathleen@Kathleen-Bartho.de">
