@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kathleen Bartho · Management Consulting & Coaching</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Kathleen Bartho · Interim Management, Leadership Consulting &amp; Coaching</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -105,9 +105,9 @@
         .hero .tags {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: flex-start;
             gap: var(--spacing-sm);
-            margin: var(--spacing-md) auto var(--spacing-lg);
+            margin: var(--spacing-md) 0 var(--spacing-lg);
             max-width: 800px;
         }
 
@@ -126,7 +126,7 @@
         .hero .cta-buttons {
             display: flex;
             gap: var(--spacing-sm);
-            justify-content: center;
+            justify-content: flex-start;
             flex-wrap: wrap;
             margin-top: var(--spacing-md);
         }
@@ -277,44 +277,63 @@
             font-weight: 600;
         }
 
-        /* Experience Section */
-        .experience {
+        /* Selected Experience Section */
+        .selected-experience {
             background-color: var(--color-white);
         }
 
-        .experience-list {
+        .selected-experience h2 {
+            text-align: center;
+        }
+
+        .experience-logos {
             max-width: 900px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: var(--spacing-sm);
         }
 
-        .experience-item {
+        .experience-logo {
             display: flex;
-            gap: var(--spacing-md);
-            padding: var(--spacing-md) 0;
-            border-bottom: 2px solid var(--color-light-blue);
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
+            padding: var(--spacing-sm);
+            background-color: var(--color-white);
+            border: 1px solid #d8e6f3;
+            border-radius: 4px;
         }
 
-        .experience-item:last-child {
-            border-bottom: none;
+        .experience-logo img {
+            display: block;
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            max-height: 64px;
+            object-fit: contain;
         }
 
-        .experience-date {
-            min-width: 140px;
-            font-weight: 600;
-            color: var(--color-deep-blue);
-            font-size: 0.95rem;
+        .experience-logo-99active {
+            gap: 0.6rem;
         }
 
-        .experience-content h4 {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--color-black);
-            margin-bottom: 0.25rem;
+        .experience-logo-99active img {
+            width: 52px;
+            height: 52px;
+            flex-shrink: 0;
         }
 
-        .experience-content p {
-            color: var(--color-text-light);
-            font-size: 0.95rem;
+        .experience-logo-wordmark {
+            color: hsl(222deg 48% 18%);
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            line-height: 1;
+        }
+
+        .experience-logo img.logo-dfb {
+            max-height: 82px;
         }
 
         /* Tools Section */
@@ -492,6 +511,10 @@
             .services-grid {
                 grid-template-columns: 1fr;
             }
+
+            .experience-logos {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
         }
 
         @media (max-width: 768px) {
@@ -523,13 +546,29 @@
                 padding: var(--spacing-md) var(--spacing-sm);
             }
 
-            .experience-item {
-                flex-direction: column;
-                gap: var(--spacing-xs);
+            .experience-logos {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: var(--spacing-sm);
             }
 
-            .experience-date {
-                min-width: auto;
+            .experience-logo {
+                min-height: 100px;
+                padding: var(--spacing-sm);
+            }
+
+            .experience-logo img {
+                max-width: 120px;
+            }
+
+            .experience-logo-99active {
+                grid-column: 1 / -1;
+                width: calc(50% - var(--spacing-xs));
+                justify-self: center;
+            }
+
+            .experience-logo-99active img {
+                width: 48px;
+                height: 48px;
             }
 
             .cta-buttons {
@@ -558,16 +597,16 @@
                     <img src="Kathleen.jpg" alt="Kathleen Bartho">
                 </div>
                 <div class="hero-content">
-                    <p class="tagline">Management consulting & coaching · Organizational development · Digital & regulatory change · Financial PMO</p>
-                    <h1>Structure for the work. Clarity for the people.</h1>
+                    <p class="tagline">Interim Management · Leadership Consulting &amp; Coaching · Human Change Management · Organizational stabilization</p>
+                    <h1>Stabilize the operation. Lead the change. Enable the people.</h1>
                     <p class="subheadline">
-                        I support leaders and teams through complex digital and regulatory programs: sound governance, financial control, and delivery discipline, combined with coaching that strengthens how people collaborate, decide, and follow through when pressure is high.
+                        I take interim leadership responsibility when organizations are under pressure: stabilizing teams and operations, clarifying priorities and accountability, and making change workable for the people who have to deliver it.
                     </p>
                     <div class="tags">
-                        <span class="tag">Consulting & coaching</span>
-                        <span class="tag">Collaboration & leadership</span>
-                        <span class="tag">Financial PMO & IT controlling</span>
-                        <span class="tag">PMO & program leadership</span>
+                        <span class="tag">Interim Management</span>
+                        <span class="tag">Human Change Management</span>
+                        <span class="tag">Leadership enablement</span>
+                        <span class="tag">Organizational stabilization</span>
                     </div>
                     <div class="cta-buttons">
                         <a href="https://www.linkedin.com/in/kathleen-bartho-7923b4167/" target="_blank" rel="noopener noreferrer" class="btn-primary">
@@ -595,13 +634,13 @@
             <h2>About</h2>
             <div class="about-content">
                 <p>
-                    I work in a dual role: as a management consultant I bring structure to portfolios, finances, and operating models; as a coach I help teams build the habits of collaboration that make those models stick. The strongest framework fails when roles are unclear, trust is low, or decisions stall, so I treat process design and how people work together as one conversation, not two.
+                    I step into demanding change and stabilization situations when leadership capacity is needed immediately. As an interim manager, I take operational responsibility: setting priorities, clarifying decisions and escalations, restoring reliable collaboration, and keeping delivery moving alongside the day-to-day business.
                 </p>
                 <p>
-                    My foundation is the Diplom-Kauffrau für Europäische Wirtschaft (FH), a German business degree comparable to an MBA, together with fifteen years as project lead, PMO lead, and IT project lead in large programs. I design governance and steering for digital and AI-related change (including EU AI Act readiness, risk and control frameworks, and executive-ready reporting).
+                    Human Change Management and leadership enablement shape how I lead that work. I involve the people who understand the operation, surface uncertainty, overload, resistance, and conflict early, and translate change goals into practical steps. Participation and accountability belong together: people need a voice, clear expectations, and decisions that are followed through.
                 </p>
                 <p>
-                    Training as an art & creative therapist and movement coach informs how I facilitate difficult topics, reduce friction in groups, and keep leadership grounded under complexity. I combine corporate-scale experience with pragmatic, startup-style execution, always anchored in what teams can sustain in day-to-day work.
+                    My foundation is the Diplom-Kauffrau für Europäische Wirtschaft (FH), a German business degree comparable to an MBA, together with more than 20 years of leadership and transformation experience. I combine operational knowledge of energy billing and SAP environments with governance, financial steering, program leadership, and organization design. Training as an art &amp; creative therapist and movement coach strengthens how I facilitate difficult topics and keep leadership grounded under complexity.
                 </p>
             </div>
         </div>
@@ -613,119 +652,92 @@
             <h2>How I can help</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>Financial control sponsors can stand behind</h3>
-                    <p class="service-lede">When portfolios are complex, leadership needs one coherent story on cost, risk, and commitments, not competing versions of the truth.</p>
+                    <h3>Interim Management &amp; operational leadership</h3>
+                    <p class="service-lede">When operations are under pressure or leadership capacity is temporarily missing, I provide orientation, structure, and hands-on leadership.</p>
                     <ul>
-                        <li>CAPEX/OPEX views, forecasts, and variances that hold up in scrutiny</li>
-                        <li>IT program controlling aligned to closing cycles and audit expectations</li>
-                        <li>Portfolio KPIs and reporting that answer “so what?” before the committee meets</li>
-                        <li>Governance and control design that reduces surprises without killing pace</li>
-                        <li>Steering prep with clear trade-offs, asks, and financial risk narratives</li>
+                        <li>Stabilizing teams and operational delivery</li>
+                        <li>Clarifying priorities, roles, decisions, and escalation paths</li>
+                        <li>Connecting management, business functions, IT, and external partners</li>
+                        <li>Leading through simultaneous operational and transformation pressure</li>
+                        <li>Preparing a reliable handover to the permanent organization</li>
                     </ul>
                 </div>
                 <div class="service-card">
-                    <h3>Operating models that survive real delivery</h3>
-                    <p class="service-lede">Blueprints only pay off when processes, decision rights, and day-to-day program rhythm match how your organization actually works.</p>
+                    <h3>Human Change Management &amp; leadership enablement</h3>
+                    <p class="service-lede">Change succeeds when people understand the direction, can contribute their experience, and know what is expected of them.</p>
                     <ul>
-                        <li>End-to-end process and target operating models grounded in real handoffs</li>
-                        <li>Steering models, PMO setups, and risk forums that scale without bureaucracy theater</li>
-                        <li>Regulatory- and AI-related change framed with practical controls and narratives</li>
-                        <li>Hands-on leadership for IT- and business-led initiatives across stakeholders</li>
-                        <li>Artifacts and reporting your teams can own after the assignment ends</li>
+                        <li>Involving employees and activating existing knowledge</li>
+                        <li>Identifying uncertainty, resistance, overload, and hidden conflict early</li>
+                        <li>Translating change goals into practical everyday steps</li>
+                        <li>Facilitating difficult conversations and conflicting interests</li>
+                        <li>Combining participation with accountability and measurable implementation</li>
                     </ul>
                 </div>
                 <div class="service-card">
-                    <h3>Collaboration and coaching under pressure</h3>
-                    <p class="service-lede">Even strong governance stalls when trust, roles, or candor break down; I bring consulting and coaching together when you need both.</p>
+                    <h3>Transformation, governance &amp; financial steering</h3>
+                    <p class="service-lede">Stable delivery needs transparent decisions, workable processes, and a steering model that connects operational reality with management expectations.</p>
                     <ul>
-                        <li>Leadership and team coaching alongside or next to delivery work</li>
-                        <li>Facilitation for alignment sessions, steering moments, and difficult trade-offs</li>
-                        <li>Sharper roles, interfaces, and shared norms for how teams work together</li>
-                        <li>Steady support when overload, conflict, or ambiguity spike</li>
-                        <li>Psychological safety paired with explicit accountability and outcomes</li>
+                        <li>End-to-end processes and operating models grounded in real handoffs</li>
+                        <li>Governance, PMO, risk forums, and decision-ready reporting</li>
+                        <li>Financial steering, forecasts, KPIs, and transparent trade-offs</li>
+                        <li>Business-IT translation in SAP-centric and regulated environments</li>
+                        <li>Documentation and structures teams can own after the assignment</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Highlights Section -->
-    <section class="experience">
+    <!-- Selected Experience Section -->
+    <section class="selected-experience" aria-labelledby="selected-experience-title">
         <div class="container">
-            <h2>Experience Highlights</h2>
-            <div class="experience-list">
-                <div class="experience-item">
-                    <div class="experience-date">Since 2019</div>
-                    <div class="experience-content">
-                        <h4>CEO & Founder, 99active Ltd. & Co. KG</h4>
-                        <p>Community tech platform · Organizational architecture · Vision & execution</p>
-                    </div>
+            <h2 id="selected-experience-title">Selected experience</h2>
+            <div class="experience-logos">
+                <div class="experience-logo experience-logo-99active" role="img" aria-label="99active">
+                    <img src="assets/logos/99active.png" alt="">
+                    <span class="experience-logo-wordmark" aria-hidden="true">99active</span>
                 </div>
-                <div class="experience-item">
-                    <div class="experience-date">07/2023 – today</div>
-                    <div class="experience-content">
-                        <h4>Senior Management Consultant, Stadtwerke Flensburg</h4>
-                        <p>Process architecture, SAP EEG Billing, governance & process coaching</p>
-                    </div>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-date">04/2019 – 07/2022</div>
-                    <div class="experience-content">
-                        <h4>Senior Consultant GRC & Organizational Integration, DVB Bank SE</h4>
-                        <p>Governance frameworks, KPI/KRI monitoring, post-merger integration</p>
-                    </div>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-date">09/2016 – 12/2018</div>
-                    <div class="experience-content">
-                        <h4>Senior Project Lead Transformation, Adidas Global IT</h4>
-                        <p>International transformation program</p>
-                    </div>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-date">2011 – 2016</div>
-                    <div class="experience-content">
-                        <h4>Senior roles in PM, Controlling & Compliance</h4>
-                        <p>E.ON, EnBW, DFB IT subsidiary</p>
-                    </div>
-                </div>
+                <div class="experience-logo"><img src="assets/logos/adidas.svg" alt="adidas"></div>
+                <div class="experience-logo"><img src="assets/logos/eon.svg" alt="E.ON"></div>
+                <div class="experience-logo"><img src="assets/logos/enbw.svg" alt="EnBW"></div>
+                <div class="experience-logo"><img class="logo-dfb" src="assets/logos/dfb.svg" alt="Deutscher Fußball-Bund"></div>
             </div>
         </div>
     </section>
 
-    <!-- How we work (buyer-focused) -->
+    <!-- Buyer situations -->
     <section class="tools">
         <div class="container">
             <div class="tools-content">
-                <h2>What clients usually ask first</h2>
-                <p class="tools-intro">Below is the practical stuff procurement and sponsors care about: how the work runs, what you get, and how it lands with teams. Product names matter less than fit with how you already govern and report.</p>
+                <h2>When clients call me</h2>
+                <p class="tools-intro">My work starts where operational pressure and organizational change meet—and where someone needs to take responsibility for both delivery and the people involved.</p>
                 <div class="tools-answers">
                     <div class="tools-answer">
-                        <h3>How engagements are shaped</h3>
-                        <p>Clear scope, cadence, and sponsor touchpoints from the start, whether the need is financial PMO, process and governance design, program leadership, coaching, or a deliberate mix.</p>
+                        <h3>Interim leadership is needed</h3>
+                        <p>A key role is temporarily vacant, a team needs direction, or the organization requires experienced leadership without a long lead time.</p>
                     </div>
                     <div class="tools-answer">
-                        <h3>Steering and transparency</h3>
-                        <p>Rolling views on cost, risk, and delivery that match your committees: what changed, why it matters, and what decision you need, without drowning leadership in detail.</p>
+                        <h3>Operations are unstable</h3>
+                        <p>Backlogs, unclear priorities, recurring problems, or fragmented ownership are putting reliable day-to-day delivery at risk.</p>
                     </div>
                     <div class="tools-answer">
-                        <h3>Artifacts you can reuse</h3>
-                        <p>Decision logs, interface maps, process and target operating models, control and audit narratives, and reporting packs your organization can own after the assignment.</p>
+                        <h3>Change is meeting resistance</h3>
+                        <p>Uncertainty, overload, or conflict is slowing implementation and needs to be addressed as part of the leadership work.</p>
                     </div>
                     <div class="tools-answer">
-                        <h3>Your systems, not mine</h3>
-                        <p>I work inside your landscape, commonly SAP-centric process and data environments plus the collaboration and reporting tools you already use, so knowledge stays with you.</p>
+                        <h3>Accountability is unclear</h3>
+                        <p>Roles, interfaces, decisions, and escalation paths need to become explicit so teams can act with confidence.</p>
                     </div>
                     <div class="tools-answer">
-                        <h3>Delivery style</h3>
-                        <p>Rhythm and rigor are matched to regulation, dependency risk, and team maturity, not a one-size label. The goal is predictability and clean handovers, not methodology theatre.</p>
+                        <h3>Business and IT are disconnected</h3>
+                        <p>Different priorities and language are blocking progress, and both sides need one shared picture of the work and its consequences.</p>
                     </div>
                     <div class="tools-answer">
-                        <h3>Where coaching shows up</h3>
-                        <p>When stakes are high, I help leaders and teams align on how they decide, escalate, and speak honestly under pressure, so structure in slides becomes behavior in the room.</p>
+                        <h3>A new model must land</h3>
+                        <p>A transformation, process, or operating model exists on paper but still needs to become workable behavior in everyday operations.</p>
                     </div>
                 </div>
-                <p class="tools-footnote">Frameworks and software are only useful when people share the same story about purpose, roles, and trade-offs. That is the thread between consulting and coaching.</p>
+                <p class="tools-footnote">The aim is not change activity for its own sake. It is a stable operation, clear leadership, and a team that can carry the work forward.</p>
             </div>
         </div>
     </section>
@@ -736,7 +748,7 @@
             <div class="contact-content">
                 <h2>Let’s talk</h2>
                 <p class="contact-intro">
-                    If you want stronger delivery discipline <em>and</em> healthier collaboration in the same engagement, I would be glad to explore fit, whether the priority is financial PMO, governance, program leadership, or team coaching.
+                    If you need experienced interim leadership, leadership enablement, or Human Change Management that brings people through change while stabilizing delivery, I would be glad to explore the situation with you.
                 </p>
                 <div class="contact-email">
                     <a href="mailto:Kathleen@Kathleen-Bartho.de">
@@ -758,7 +770,7 @@
                 <h2>Impressum</h2>
                 <div class="imprint-info">
                     <p><strong>Kathleen Bartho</strong><br>
-                    Management Consulting und Coaching<br>
+                    Interim Management, Leadership Consulting &amp; Coaching<br>
                     Werkstraße 2<br>
                     76477 Elchesheim-Illingen</p>
                     <p>
