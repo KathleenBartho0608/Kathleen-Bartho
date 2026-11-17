@@ -1,796 +1,243 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kathleen Bartho · Interim Management, Leadership Consulting &amp; Coaching</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --color-deep-blue: #003366;
-            --color-dark-blue: #004080;
-            --color-light-blue: #E6F2FF;
-            --color-white: #ffffff;
-            --color-black: #000000;
-            --color-text-dark: #1a1a1a;
-            --color-text-light: #666666;
-            --spacing-xs: 0.5rem;
-            --spacing-sm: 1rem;
-            --spacing-md: 2rem;
-            --spacing-lg: 4rem;
-            --spacing-xl: 6rem;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            color: var(--color-black);
-            background-color: var(--color-white);
-            line-height: 1.7;
-            font-size: 16px;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--spacing-md);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: var(--spacing-xl) var(--spacing-md) var(--spacing-lg);
-            text-align: center;
-            background: linear-gradient(135deg, var(--color-deep-blue) 0%, var(--color-dark-blue) 100%);
-            color: var(--color-white);
-        }
-
-        .hero-with-image {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-lg);
-            text-align: left;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .hero-image {
-            flex-shrink: 0;
-        }
-
-        .hero-image img {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            border: 4px solid var(--color-white);
-            object-fit: cover;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero-content {
-            flex: 1;
-        }
-
-        .hero .tagline {
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: var(--spacing-sm);
-            font-weight: 400;
-        }
-
-        .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 700;
-            color: var(--color-white);
-            margin-bottom: var(--spacing-md);
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-        }
-
-        .hero .subheadline {
-            font-size: clamp(1.1rem, 2vw, 1.35rem);
-            color: rgba(255, 255, 255, 0.95);
-            max-width: 900px;
-            margin: 0 auto var(--spacing-md);
-            font-weight: 400;
-            line-height: 1.6;
-        }
-
-        .hero .tags {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            gap: var(--spacing-sm);
-            margin: var(--spacing-md) 0 var(--spacing-lg);
-            max-width: 800px;
-        }
-
-        .hero .tag {
-            display: inline-block;
-            padding: 0.5rem 1.25rem;
-            background-color: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50px;
-            font-size: 0.9rem;
-            color: var(--color-white);
-            font-weight: 400;
-            backdrop-filter: blur(10px);
-        }
-
-        .hero .cta-buttons {
-            display: flex;
-            gap: var(--spacing-sm);
-            justify-content: flex-start;
-            flex-wrap: wrap;
-            margin-top: var(--spacing-md);
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.875rem 2rem;
-            background-color: var(--color-white);
-            color: var(--color-deep-blue);
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.2s ease;
-            border: 2px solid var(--color-white);
-        }
-
-        .btn-primary:hover {
-            background-color: transparent;
-            color: var(--color-white);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.875rem 2rem;
-            background-color: transparent;
-            color: var(--color-white);
-            text-decoration: none;
-            border: 2px solid var(--color-white);
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.2s ease;
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--color-white);
-            color: var(--color-deep-blue);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-icon {
-            width: 20px;
-            height: 20px;
-        }
-
-        /* Section Styles */
-        section {
-            padding: var(--spacing-lg) var(--spacing-md);
-        }
-
-        section h2 {
-            font-size: clamp(1.75rem, 4vw, 2.5rem);
-            font-weight: 700;
-            color: var(--color-deep-blue);
-            margin-bottom: var(--spacing-md);
-            letter-spacing: -0.01em;
-        }
-
-        section h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--color-deep-blue);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        /* About Section */
-        .about {
-            background-color: var(--color-white);
-        }
-
-        .about-content {
-            max-width: 900px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--color-text-dark);
-        }
-
-        .about-content p {
-            margin-bottom: var(--spacing-md);
-        }
-
-        /* Services Section */
-        .services {
-            background-color: var(--color-light-blue);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--spacing-md);
-            margin-top: var(--spacing-md);
-        }
-
-        .service-card {
-            background-color: var(--color-white);
-            padding: var(--spacing-md);
-            border: 2px solid var(--color-deep-blue);
-            border-radius: 4px;
-            transition: all 0.2s ease;
-        }
-
-        .service-card:hover {
-            box-shadow: 0 8px 24px rgba(0, 51, 102, 0.15);
-            transform: translateY(-4px);
-            border-color: var(--color-dark-blue);
-        }
-
-        .service-card h3 {
-            font-size: 1.35rem;
-            margin-bottom: 0.5rem;
-            color: var(--color-deep-blue);
-        }
-
-        .service-card .service-lede {
-            font-size: 0.95rem;
-            line-height: 1.55;
-            color: var(--color-text-light);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .service-card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .service-card li {
-            padding-left: 1.5rem;
-            position: relative;
-            margin-bottom: 0.75rem;
-            color: var(--color-text-dark);
-            line-height: 1.6;
-        }
-
-        .service-card li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--color-deep-blue);
-            font-weight: 600;
-        }
-
-        /* Selected Experience Section */
-        .selected-experience {
-            background-color: var(--color-white);
-        }
-
-        .selected-experience h2 {
-            text-align: center;
-        }
-
-        .experience-logos {
-            max-width: 900px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(5, minmax(0, 1fr));
-            gap: var(--spacing-sm);
-        }
-
-        .experience-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 120px;
-            padding: var(--spacing-sm);
-            background-color: var(--color-white);
-            border: 1px solid #d8e6f3;
-            border-radius: 4px;
-        }
-
-        .experience-logo img {
-            display: block;
-            width: auto;
-            max-width: 100%;
-            height: auto;
-            max-height: 64px;
-            object-fit: contain;
-        }
-
-        .experience-logo-99active {
-            gap: 0.6rem;
-        }
-
-        .experience-logo-99active img {
-            width: 52px;
-            height: 52px;
-            flex-shrink: 0;
-        }
-
-        .experience-logo-wordmark {
-            color: hsl(222deg 48% 18%);
-            font-size: 1rem;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            line-height: 1;
-        }
-
-        .experience-logo img.logo-dfb {
-            max-height: 82px;
-        }
-
-        /* Tools Section */
-        .tools {
-            background-color: var(--color-light-blue);
-            padding: var(--spacing-md) var(--spacing-md);
-        }
-
-        .tools-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .tools-intro {
-            font-size: 1.05rem;
-            line-height: 1.75;
-            color: var(--color-text-dark);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .tools-footnote {
-            margin-top: var(--spacing-md);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            color: var(--color-text-light);
-        }
-
-        .tools-answers {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: var(--spacing-md);
-            margin-top: var(--spacing-md);
-        }
-
-        .tools-answer {
-            background-color: var(--color-white);
-            border: 2px solid var(--color-deep-blue);
-            border-radius: 4px;
-            padding: var(--spacing-md);
-        }
-
-        .tools-answer h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--color-deep-blue);
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.01em;
-        }
-
-        .tools-answer p {
-            font-size: 0.95rem;
-            line-height: 1.65;
-            color: var(--color-text-dark);
-            margin: 0;
-        }
-
-        /* Contact Section */
-        .contact {
-            background-color: var(--color-deep-blue);
-            color: var(--color-white);
-            padding: var(--spacing-lg) var(--spacing-md);
-        }
-
-        .contact h2 {
-            color: var(--color-white);
-        }
-
-        .contact-content {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact-intro {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.95);
-            margin-bottom: var(--spacing-md);
-            line-height: 1.7;
-        }
-
-        .contact-email {
-            margin-top: var(--spacing-md);
-        }
-
-        .contact-email a {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2.5rem;
-            background-color: var(--color-white);
-            color: var(--color-deep-blue);
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.2s ease;
-            border: 2px solid var(--color-white);
-        }
-
-        .contact-email a:hover {
-            background-color: transparent;
-            color: var(--color-white);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Imprint Section */
-        .imprint {
-            background-color: var(--color-white);
-            padding: var(--spacing-lg) var(--spacing-md);
-            border-top: 2px solid var(--color-light-blue);
-        }
-
-        .imprint-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .imprint h2 {
-            margin-bottom: var(--spacing-md);
-        }
-
-        .imprint-info {
-            font-size: 0.95rem;
-            line-height: 1.8;
-            color: var(--color-text-dark);
-        }
-
-        .imprint-info p {
-            margin-bottom: 0.5rem;
-        }
-
-        .imprint-info a {
-            color: var(--color-deep-blue);
-            text-decoration: none;
-            border-bottom: 2px solid var(--color-light-blue);
-            transition: border-color 0.2s ease;
-            font-weight: 500;
-        }
-
-        .imprint-info a:hover {
-            border-bottom-color: var(--color-deep-blue);
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--color-deep-blue);
-            padding: var(--spacing-md);
-            text-align: center;
-            color: var(--color-white);
-            font-size: 0.9rem;
-        }
-
-        .footer-links {
-            margin-top: var(--spacing-xs);
-            display: flex;
-            gap: var(--spacing-sm);
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--color-white);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.2s ease;
-        }
-
-        .footer-links a:hover {
-            border-bottom-color: var(--color-white);
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .experience-logos {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                padding: var(--spacing-md) var(--spacing-sm) var(--spacing-md);
-            }
-
-            .hero-with-image {
-                flex-direction: column;
-                text-align: center;
-                gap: var(--spacing-md);
-            }
-
-            .hero-image img {
-                width: 180px;
-                height: 180px;
-            }
-
-            .hero-content {
-                text-align: center;
-            }
-
-            .hero .tags,
-            .hero .cta-buttons {
-                justify-content: center;
-            }
-
-            section {
-                padding: var(--spacing-md) var(--spacing-sm);
-            }
-
-            .experience-logos {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: var(--spacing-sm);
-            }
-
-            .experience-logo {
-                min-height: 100px;
-                padding: var(--spacing-sm);
-            }
-
-            .experience-logo img {
-                max-width: 120px;
-            }
-
-            .experience-logo-99active {
-                grid-column: 1 / -1;
-                width: calc(50% - var(--spacing-xs));
-                justify-self: center;
-            }
-
-            .experience-logo-99active img {
-                width: 48px;
-                height: 48px;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .btn-primary,
-            .btn-secondary {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .contact-email a {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-    </style>
+    <title>Kathleen Bartho · Unternehmerin, Management- &amp; Leadership-Consultant, Coach</title>
+    <meta name="description" content="Kathleen Bartho ist Gründerin und CEO von 99active und arbeitet als Management- und Leadership-Consultant und Coach: SAP und Energiewirtschaft, Ausschreibungen, Prozesse, Controlling, Teams.">
+    <link rel="canonical" href="https://kathleen-bartho.de/">
+    <link rel="alternate" hreflang="de" href="https://kathleen-bartho.de/">
+    <link rel="alternate" hreflang="en" href="https://kathleen-bartho.de/en/">
+    <link rel="alternate" hreflang="x-default" href="https://kathleen-bartho.de/">
+    <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-with-image">
-                <div class="hero-image">
-                    <img src="Kathleen.jpg" alt="Kathleen Bartho">
-                </div>
-                <div class="hero-content">
-                    <p class="tagline">Interim Management · Leadership Consulting &amp; Coaching · Human Change Management · Organizational stabilization</p>
-                    <h1>Stabilize the operation. Lead the change. Enable the people.</h1>
-                    <p class="subheadline">
-                        I take interim leadership responsibility when organizations are under pressure: stabilizing teams and operations, clarifying priorities and accountability, and making change workable for the people who have to deliver it.
-                    </p>
-                    <div class="tags">
-                        <span class="tag">Interim Management</span>
-                        <span class="tag">Human Change Management</span>
-                        <span class="tag">Leadership enablement</span>
-                        <span class="tag">Organizational stabilization</span>
-                    </div>
-                    <div class="cta-buttons">
-                        <a href="https://www.linkedin.com/in/kathleen-bartho-7923b4167/" target="_blank" rel="noopener noreferrer" class="btn-primary">
-                            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                            </svg>
+    <header class="topbar">
+        <div class="wrap">
+            <a class="topbar-name" href="#top">Kathleen Bartho</a>
+            <div class="topbar-right">
+                <nav class="topbar-nav" aria-label="Seitenabschnitte">
+                    <a href="#ueber-mich">Über mich</a>
+                    <a href="#themen">Themen</a>
+                    <a href="#99active">99active</a>
+                    <a href="#stationen">Stationen</a>
+                    <a href="#kontakt">Kontakt</a>
+                </nav>
+                <nav class="lang" aria-label="Sprache">
+                    <span aria-current="page" title="Deutsch">DE</span>
+                    <a href="en/" lang="en" hreflang="en" title="English">EN</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="top">
+        <section class="hero">
+            <div class="wrap">
+                <img class="hero-photo" src="Kathleen.jpg" alt="Kathleen Bartho" width="200" height="200">
+                <div>
+                    <h1>Kathleen Bartho</h1>
+                    <p class="hero-role">Unternehmerin · Management- &amp; Leadership-Consultant · Coach</p>
+                    <p class="hero-quote">„Ganzheitlich und wirtschaftlich denken: zuerst die Menschen und ihre Bedürfnisse, dann Abläufe und Organisation, alles ausgerichtet am Kerngeschäft.“</p>
+                    <div class="buttons">
+                        <a class="btn btn-solid" href="https://www.linkedin.com/in/kathleen-bartho-7923b4167/" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                             LinkedIn
                         </a>
-                        <a href="mailto:Kathleen@Kathleen-Bartho.de" class="btn-secondary">
-                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                <polyline points="22,6 12,13 2,6"/>
-                            </svg>
-                            Write an Email
+                        <a class="btn btn-line" href="mailto:Kathleen@Kathleen-Bartho.de">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            E-Mail schreiben
                         </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Me Section -->
-    <section class="about">
-        <div class="container">
-            <h2>About</h2>
-            <div class="about-content">
-                <p>
-                    I step into demanding change and stabilization situations when leadership capacity is needed immediately. As an interim manager, I take operational responsibility: setting priorities, clarifying decisions and escalations, restoring reliable collaboration, and keeping delivery moving alongside the day-to-day business.
-                </p>
-                <p>
-                    Human Change Management and leadership enablement shape how I lead that work. I involve the people who understand the operation, surface uncertainty, overload, resistance, and conflict early, and translate change goals into practical steps. Participation and accountability belong together: people need a voice, clear expectations, and decisions that are followed through.
-                </p>
-                <p>
-                    My foundation is the Diplom-Kauffrau für Europäische Wirtschaft (FH), a German business degree comparable to an MBA, together with more than 20 years of leadership and transformation experience. I combine operational knowledge of energy billing and SAP environments with governance, financial steering, program leadership, and organization design. Training as an art &amp; creative therapist and movement coach strengthens how I facilitate difficult topics and keep leadership grounded under complexity.
-                </p>
+        <section class="section" id="ueber-mich">
+            <div class="wrap">
+                <h2>Über mich</h2>
+                <div class="body prose">
+                    <p>Ich bin in erster Linie Unternehmerin. Mit 99active baue ich ein lokales Netzwerk mit digitaler Plattform auf. Meine Beratungsprojekte finanzieren dieses Vorhaben, und sie halten mich nah an der Praxis großer Organisationen. Was ich im eigenen Unternehmen ausprobiere, nehme ich in Projekte mit, und umgekehrt. Auf eine Rolle lege ich mich dabei nicht fest: Je nach Situation bin ich Unternehmerin, Beraterin oder Coach.</p>
+                    <p>Mein Blick ist immer derselbe, ob im eigenen Unternehmen oder beim Kunden: Ich schaue zuerst auf die Menschen und was sie brauchen. Danach kommen Abläufe, Organisation und die Zahlen. Und alles muss zum Kerngeschäft passen.</p>
+                    <p>Angefangen habe ich 1998 in der Energiewirtschaft, in der SAP-Abrechnung der EnBW. Später kamen der Energiehandel bei E.ON, eine Bankenfusion bei der DVB, die Digitaltochter des DFB und eine große Cloud- und Plattformtransformation bei adidas hinzu. In fast allen Stationen ging es darum, gewachsene Abläufe zu ordnen, Fachbereich und IT an einen Tisch zu holen und Entscheidungen vorzubereiten, die tragen. Meine Ausbildung als Kunst- und Kreativtherapeutin prägt, wie ich mit Teams arbeite, gerade wenn es anstrengend wird.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Core Services Section -->
-    <section class="services">
-        <div class="container">
-            <h2>How I can help</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Interim Management &amp; operational leadership</h3>
-                    <p class="service-lede">When operations are under pressure or leadership capacity is temporarily missing, I provide orientation, structure, and hands-on leadership.</p>
-                    <ul>
-                        <li>Stabilizing teams and operational delivery</li>
-                        <li>Clarifying priorities, roles, decisions, and escalation paths</li>
-                        <li>Connecting management, business functions, IT, and external partners</li>
-                        <li>Leading through simultaneous operational and transformation pressure</li>
-                        <li>Preparing a reliable handover to the permanent organization</li>
+        <section class="section" id="themen">
+            <div class="wrap">
+                <h2>Woran ich arbeite</h2>
+                <div class="fields">
+                    <div>
+                        <h3>SAP und Energiewirtschaft</h3>
+                        <p>Acht Jahre SAP IS-U im Tagesgeschäft, danach SAP aus Sicht von Controlling, Finance und Projektleitung bis hin zu S/4HANA Utilities und EEG Billing. Ich kenne Abrechnung, Marktkommunikation und Netznutzung von innen.</p>
+                    </div>
+                    <div>
+                        <h3>Ausschreibungen</h3>
+                        <p>Ich habe Ausschreibungen für Plattformen, SAP und Auditleistungen vorbereitet und bis zur Finalisierung begleitet. Dabei übersetze ich fachliche Anforderungen in Unterlagen, auf die Anbieter vergleichbar antworten können.</p>
+                    </div>
+                    <div>
+                        <h3>Prozesse und Organisation</h3>
+                        <p>Prozessaufnahme mit den Menschen, die die Arbeit machen, dazu Zielbilder, Rollen und Verantwortlichkeiten. Ich arbeite mit BPMN 2.0 und gängigen Modellierungswerkzeugen, vor allem aber im Gespräch.</p>
+                    </div>
+                    <div>
+                        <h3>Controlling und Steuerung</h3>
+                        <p>IT-Budgets, Forecasts, Kostenstellen- und Profitcenter-Strukturen, Reporting für Geschäftsführung und Lenkungskreise. Zahlen, die man versteht, sind die Grundlage für gute Entscheidungen.</p>
+                    </div>
+                    <div>
+                        <h3>Teams und Leadership</h3>
+                        <p>Leadership-Beratung für Führungskräfte, Teamplanung, Recruiting und Onboarding, Change-Begleitung und Moderation. Bei adidas habe ich geholfen, ein großes Plattform-Team aufzubauen.</p>
+                    </div>
+                    <div>
+                        <h3>Go-to-Market und eigene Systeme</h3>
+                        <p>Bei 99active führe ich die Go-to-Market-Strategie und baue unsere eigenen Systeme. Effiziente Dokumentation und automatisierte Prozesse sorgen dafür, dass wenig Handarbeit nötig ist. Diese Erfahrung bringe ich auch in Projekte ein.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-soft" id="99active">
+            <div class="wrap">
+                <h2>99active</h2>
+                <div class="body prose">
+                    <div class="brand">
+                        <img src="assets/logos/99active.png" alt="" width="44" height="44">
+                        <span>99active</span>
+                    </div>
+                    <p>99active ist mein eigentliches unternehmerisches Ziel. Wir bringen Menschen über lokale Erlebnisse zusammen: Gastgeber bieten Workshops, Touren und Treffen an, Teilnehmende buchen sie über die Plattform. Der erste Launch war 2021. Aus den Erfahrungen ist 99active 2.0 entstanden, gestartet im Februar 2026.</p>
+                    <p>Meine Hauptrolle ist derzeit eine Go-to-Market-Strategie, die auf Skalierbarkeit ausgelegt ist. Wir bauen zuerst das Netzwerk auf und entwickeln die Plattform entlang dessen, was die Menschen brauchen. Dazu baue ich eigene Systeme wie das 99active CRM, damit im Hintergrund vieles automatisch läuft und vorne Zeit für die Menschen bleibt.</p>
+                    <p class="more"><a href="https://99active.com/" target="_blank" rel="noopener noreferrer">Zu 99active</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="stationen">
+            <div class="wrap">
+                <h2>Stationen</h2>
+                <div class="body">
+                    <div class="logos">
+                        <img src="assets/logos/adidas.svg" alt="adidas">
+                        <img src="assets/logos/eon.svg" alt="E.ON">
+                        <img src="assets/logos/enbw.svg" alt="EnBW">
+                        <img class="logo-tall" src="assets/logos/dfb.svg" alt="Deutscher Fußball-Bund">
+                    </div>
+
+                    <div class="job">
+                        <div class="job-when">seit 2026</div>
+                        <div>
+                            <h3>Bundeswehr Bekleidungsmanagement</h3>
+                            <p class="job-pos">Management Consultant</p>
+                            <p class="job-text">Ich arbeite an einer effizienten Daten-Dokumentation und an der Personalbedarfssteuerung.</p>
+                        </div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-when">2023 – 2025</div>
+                        <div>
+                            <h3>Stadtwerke Flensburg</h3>
+                            <p class="job-pos">Management Consultant · Kaufmännischer Bereich</p>
+                            <p class="job-text">Ich habe die Prozessaufnahme im kaufmännischen Bereich geleitet, war Projektleiterin für SAP EEG Billing und habe die Projektleitung SAP S/4HANA Utilities als Coach begleitet.</p>
+                        </div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-when">2019 – 2022</div>
+                        <div>
+                            <h3>DVB Bank</h3>
+                            <p class="job-pos">Senior Consultant GRC &amp; Organisationsintegration</p>
+                            <p class="job-text">Nach einer Fusion habe ich Prozesse, Systeme und Organisation zusammengeführt und ein Governance-Framework aufgebaut.</p>
+                        </div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-when">2016 – 2018</div>
+                        <div>
+                            <h3>adidas Global IT</h3>
+                            <p class="job-pos">Leadership Consultant des SVP Platform Engineering · Program Lead</p>
+                            <p class="job-text">adidas ging in dieser Zeit in die Cloud und baute dafür ein großes Platform-Engineering-Team auf. Ich habe den SVP beraten und das Transformationsprogramm geleitet, von einer SAP-HANA-Ausschreibung bis zu Teamplanung, Recruiting und Onboarding.</p>
+                        </div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-when">2014 – 2016</div>
+                        <div>
+                            <h3>DFB Medien</h3>
+                            <p class="job-pos">Senior Consultant für die Geschäftsführung</p>
+                            <p class="job-text">Im Auftrag der Geschäftsführung habe ich Projekt- und Prozessmanagement eingeführt und eine EU-Ausschreibung vorbereitet und bis zur Finalisierung begleitet.</p>
+                        </div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-when">2011 – 2013</div>
+                        <div>
+                            <h3>E.ON Global Energy Trading</h3>
+                            <p class="job-pos">Senior Consultant Risk &amp; Compliance</p>
+                            <p class="job-text">Im Energiehandel habe ich ein Risk- und Compliance-System aufgebaut und ein internes Kontrollsystem eingeführt.</p>
+                        </div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-when">1998 – 2011, 2015 – 2016</div>
+                        <div>
+                            <h3>EnBW</h3>
+                            <p class="job-pos">Abrechnung · IT Controlling Director · Head of ICS &amp; Compliance · Senior Consultant KPI &amp; PMO</p>
+                            <p class="job-text">Hier habe ich die Energiewirtschaft von der Pike auf gelernt: zuerst acht Jahre Abrechnung in SAP IS-U, dann das IT-Controlling und die Einführung eines GRC-Systems. Später kam ich als Beraterin für KPI-Systeme und PMO zurück.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="ausbildung">
+            <div class="wrap">
+                <h2>Ausbildung</h2>
+                <div class="body">
+                    <ul class="certs">
+                        <li>Diplom-Kauffrau für Europäische Wirtschaft (FH)</li>
+                        <li>Kunst- und Kreativtherapeutin</li>
                     </ul>
                 </div>
-                <div class="service-card">
-                    <h3>Human Change Management &amp; leadership enablement</h3>
-                    <p class="service-lede">Change succeeds when people understand the direction, can contribute their experience, and know what is expected of them.</p>
-                    <ul>
-                        <li>Involving employees and activating existing knowledge</li>
-                        <li>Identifying uncertainty, resistance, overload, and hidden conflict early</li>
-                        <li>Translating change goals into practical everyday steps</li>
-                        <li>Facilitating difficult conversations and conflicting interests</li>
-                        <li>Combining participation with accountability and measurable implementation</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <h3>Transformation, governance &amp; financial steering</h3>
-                    <p class="service-lede">Stable delivery needs transparent decisions, workable processes, and a steering model that connects operational reality with management expectations.</p>
-                    <ul>
-                        <li>End-to-end processes and operating models grounded in real handoffs</li>
-                        <li>Governance, PMO, risk forums, and decision-ready reporting</li>
-                        <li>Financial steering, forecasts, KPIs, and transparent trade-offs</li>
-                        <li>Business-IT translation in SAP-centric and regulated environments</li>
-                        <li>Documentation and structures teams can own after the assignment</li>
-                    </ul>
+            </div>
+        </section>
+
+        <section class="section" id="kontakt">
+            <div class="wrap">
+                <h2>Kontakt</h2>
+                <div class="body prose">
+                    <p>Wenn Sie sich über ein Vorhaben, ein Projekt oder 99active austauschen möchten, schreiben Sie mir gern.</p>
+                    <div class="buttons contact-mail">
+                        <a class="btn btn-solid" href="mailto:Kathleen@Kathleen-Bartho.de">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            Kathleen@Kathleen-Bartho.de
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Selected Experience Section -->
-    <section class="selected-experience" aria-labelledby="selected-experience-title">
-        <div class="container">
-            <h2 id="selected-experience-title">Selected experience</h2>
-            <div class="experience-logos">
-                <div class="experience-logo experience-logo-99active" role="img" aria-label="99active">
-                    <img src="assets/logos/99active.png" alt="">
-                    <span class="experience-logo-wordmark" aria-hidden="true">99active</span>
-                </div>
-                <div class="experience-logo"><img src="assets/logos/adidas.svg" alt="adidas"></div>
-                <div class="experience-logo"><img src="assets/logos/eon.svg" alt="E.ON"></div>
-                <div class="experience-logo"><img src="assets/logos/enbw.svg" alt="EnBW"></div>
-                <div class="experience-logo"><img class="logo-dfb" src="assets/logos/dfb.svg" alt="Deutscher Fußball-Bund"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Buyer situations -->
-    <section class="tools">
-        <div class="container">
-            <div class="tools-content">
-                <h2>When clients call me</h2>
-                <p class="tools-intro">My work starts where operational pressure and organizational change meet—and where someone needs to take responsibility for both delivery and the people involved.</p>
-                <div class="tools-answers">
-                    <div class="tools-answer">
-                        <h3>Interim leadership is needed</h3>
-                        <p>A key role is temporarily vacant, a team needs direction, or the organization requires experienced leadership without a long lead time.</p>
-                    </div>
-                    <div class="tools-answer">
-                        <h3>Operations are unstable</h3>
-                        <p>Backlogs, unclear priorities, recurring problems, or fragmented ownership are putting reliable day-to-day delivery at risk.</p>
-                    </div>
-                    <div class="tools-answer">
-                        <h3>Change is meeting resistance</h3>
-                        <p>Uncertainty, overload, or conflict is slowing implementation and needs to be addressed as part of the leadership work.</p>
-                    </div>
-                    <div class="tools-answer">
-                        <h3>Accountability is unclear</h3>
-                        <p>Roles, interfaces, decisions, and escalation paths need to become explicit so teams can act with confidence.</p>
-                    </div>
-                    <div class="tools-answer">
-                        <h3>Business and IT are disconnected</h3>
-                        <p>Different priorities and language are blocking progress, and both sides need one shared picture of the work and its consequences.</p>
-                    </div>
-                    <div class="tools-answer">
-                        <h3>A new model must land</h3>
-                        <p>A transformation, process, or operating model exists on paper but still needs to become workable behavior in everyday operations.</p>
-                    </div>
-                </div>
-                <p class="tools-footnote">The aim is not change activity for its own sake. It is a stable operation, clear leadership, and a team that can carry the work forward.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-content">
-                <h2>Let’s talk</h2>
-                <p class="contact-intro">
-                    If you need experienced interim leadership, leadership enablement, or Human Change Management that brings people through change while stabilizing delivery, I would be glad to explore the situation with you.
-                </p>
-                <div class="contact-email">
-                    <a href="mailto:Kathleen@Kathleen-Bartho.de">
-                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                            <polyline points="22,6 12,13 2,6"/>
-                        </svg>
-                        Kathleen@Kathleen-Bartho.de
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Imprint Section -->
-    <section class="imprint">
-        <div class="container">
-            <div class="imprint-content">
+        <section class="section" id="impressum">
+            <div class="wrap">
                 <h2>Impressum</h2>
-                <div class="imprint-info">
+                <div class="body imprint">
                     <p><strong>Kathleen Bartho</strong><br>
-                    Interim Management, Leadership Consulting &amp; Coaching<br>
+                    <span class="muted">Unternehmerin · Management- &amp; Leadership-Consulting · Coaching</span><br>
                     Werkstraße 2<br>
                     76477 Elchesheim-Illingen</p>
                     <p>
                         <a href="mailto:Kathleen@Kathleen-Bartho.de">Kathleen@Kathleen-Bartho.de</a><br>
-                        <a href="tel:+4972459471861">+49 07245 9471861</a><br>
+                        <a href="tel:+4972459471861">+49 7245 9471861</a><br>
                         <a href="tel:+4917642573493">+49 176 42 57 34 93</a><br>
-                        VAT ID DE280103988
+                        USt-ID DE280103988
                     </p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Kathleen Bartho. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="https://www.linkedin.com/in/kathleen-bartho-7923b4167/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </div>
+    <footer class="footer">
+        <div class="wrap">
+            <span>&copy; 2026 Kathleen Bartho</span>
+            <span><a href="https://www.linkedin.com/in/kathleen-bartho-7923b4167/" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a href="en/" lang="en" hreflang="en">English</a></span>
         </div>
     </footer>
 </body>
